@@ -14,18 +14,34 @@ function changeLanguage(lang) {
 
     // تغییر محتوای متنی بر اساس زبان انتخاب‌شده
     document.querySelectorAll('[data-en]').forEach(element => {
-        element.textContent = element.getAttribute(`data-${lang}`);
+        const text = element.getAttribute(`data-${lang}`);
+        
+        // اگر المان لینک دارد، فقط متن داخل لینک یا بیرون آن را تغییر بده
+        const link = element.querySelector('a');
+        if (link) {
+            const prefix = element.textContent.split(':')[0] + ': ';
+            element.innerHTML = prefix + `<a href="${link.href}" target="${link.target || ''}">${text.split(': ')[1]}</a>`;
+        } else {
+            element.textContent = text;
+        }
     });
 
     // تنظیم جهت و فونت بر اساس زبان
-    if (lang === 'fa') {
+    if (lang === 'fa' || lang === 'ar') {
         document.body.style.direction = 'rtl';
-        document.body.style.fontFamily = "'Vazir', sans-serif";
-    } else if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-        document.body.style.fontFamily = "'Noto Naskh Arabic', sans-serif";
+        document.querySelector('.navbar').style.flexDirection = 'row-reverse';
+        document.querySelector('.nav-links').style.marginRight = '30px';
+        document.querySelector('.nav-links').style.marginLeft = '0';
+        document.getElementById('language-switch').style.marginRight = 'auto';
+        document.getElementById('language-switch').style.marginLeft = '0';
+        document.body.style.fontFamily = lang === 'fa' ? "'Vazir', sans-serif" : "'Noto Naskh Arabic', sans-serif";
     } else if (lang === 'en') {
         document.body.style.direction = 'ltr';
+        document.querySelector('.navbar').style.flexDirection = 'row';
+        document.querySelector('.nav-links').style.marginLeft = '30px';
+        document.querySelector('.nav-links').style.marginRight = '0';
+        document.getElementById('language-switch').style.marginLeft = 'auto';
+        document.getElementById('language-switch').style.marginRight = '0';
         document.body.style.fontFamily = "'Roboto', sans-serif";
     }
 }
@@ -41,13 +57,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
-    });
-});
-
-// انیمیشن برای تغییر زبان دکمه‌ها در فرم تماس
-document.querySelectorAll('form button').forEach(button => {
-    button.addEventListener('change', function() {
-        changeLanguage(document.getElementById('language-switch').value);
     });
 });
 
