@@ -17,10 +17,9 @@ function changeLanguage(lang) {
         const text = element.getAttribute(`data-${lang}`);
         
         // اگر المان لینک دارد، فقط متن داخل لینک یا بیرون آن را تغییر بده
-        const link = element.querySelector('a');
+        const link = element.querySelector('a') || (element.tagName === 'A' ? element : null);
         if (link) {
-            const prefix = element.textContent.split(':')[0] + ': ';
-            element.innerHTML = prefix + `<a href="${link.href}" target="${link.target || ''}">${text.split(': ')[1]}</a>`;
+            link.textContent = text; // فقط متن داخل لینک تغییر می‌کنه
         } else {
             element.textContent = text;
         }
@@ -34,7 +33,7 @@ function changeLanguage(lang) {
         document.querySelector('.nav-links').style.marginLeft = '0';
         document.getElementById('language-switch').style.marginRight = 'auto';
         document.getElementById('language-switch').style.marginLeft = '0';
-        document.body.style.fontFamily = lang === 'fa' ? "'Vazir', sans-serif" : "'Noto Naskh Arabic', sans-serif";
+        document.body.style.fontFamily = lang === 'fa' ? "'Vazir', sans-serif" : "'Noto Naskh Arabic', sans-serif';
     } else if (lang === 'en') {
         document.body.style.direction = 'ltr';
         document.querySelector('.navbar').style.flexDirection = 'row';
@@ -42,7 +41,7 @@ function changeLanguage(lang) {
         document.querySelector('.nav-links').style.marginRight = '0';
         document.getElementById('language-switch').style.marginLeft = 'auto';
         document.getElementById('language-switch').style.marginRight = '0';
-        document.body.style.fontFamily = "'Roboto', sans-serif";
+        document.body.style.fontFamily = "'Roboto', sans-serif';
     }
 }
 
@@ -67,4 +66,13 @@ window.addEventListener('scroll', function() {
         const scrollPosition = window.pageYOffset;
         header.style.backgroundPositionY = -(scrollPosition * 0.3) + 'px';
     });
+});
+
+// تابع تoggle منو توی موبایل
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
 });
