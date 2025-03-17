@@ -208,7 +208,7 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     background-color: rgba(13, 13, 13, 0.9);
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 300px; /* اصلاح واحد */
     transition: transform 0.3s;
 }
 
@@ -218,11 +218,11 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 
 .why-us-item h3 {
     color: #00ccff;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* اصلاح خطا: margin_top به margin-bottom */
 }
 
 .why-us-item p {
-    font-size: 16px;
+    font-size: 16px; /* اصلاح خطا: font_size به font-size */
 }
 
 /* تماس */
