@@ -45,6 +45,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
+    padding-top: 80px; /* برای جلوگیری از همپوشانی با منوی ثابت */
 }
 
 .hero-content {
@@ -67,7 +68,7 @@ body {
 
 /* نویگیشن بار */
 .navbar {
-    position: sticky;
+    position: fixed; /* منو همیشه بالای صفحه ثابت بمونه */
     top: 0;
     width: 100%;
     display: flex;
