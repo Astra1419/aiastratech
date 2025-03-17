@@ -12,48 +12,58 @@ body {
     line-height: 1.6;
 }
 
+/* کاور پس‌زمینه */
+.background-container {
+    background: url('cover-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* لایه تیره برای خوانایی متن */
+    z-index: 1;
+}
+
+.background-container > * {
+    position: relative;
+    z-index: 2;
+}
+
 /* هدر */
 .hero {
-    position: relative;
     height: 100vh;
-    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.cover-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 80%;
-    opacity: 0.9;
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
+    padding: 20px;
 }
 
 .hero-content h1 {
     font-size: 48px;
     color: #00ccff;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
     font-size: 20px;
     max-width: 600px;
     margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* نویگیشن بار */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     display: flex;
@@ -128,7 +138,7 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 .services {
     text-align: center;
     padding: 80px 20px;
-    background-color: #1a1a1a;
+    background: rgba(26, 26, 26, 0.9); /* شفافیت برای ادغام با پس‌زمینه */
 }
 
 .services h2 {
@@ -145,7 +155,7 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 }
 
 .service-card {
-    background-color: #0d0d0d;
+    background-color: rgba(13, 13, 13, 0.9);
     padding: 20px;
     border-radius: 10px;
     width: 300px;
@@ -169,6 +179,7 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 .why-us {
     text-align: center;
     padding: 80px 20px;
+    background: rgba(26, 26, 26, 0.9);
 }
 
 .why-us h2 {
@@ -185,28 +196,31 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 }
 
 .why-us-item {
-    background-color: #1a1a1a;
+    background-color: rgba(13, 13, 13, 0.9);
     padding: 20px;
     border-radius: 10px;
- 10px;
-    width: 300p
-    transition: transform 0x;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.why-us-item:hover {
+    transform: translateY(-10px);
 }
 
 .why-us-item h3 {
     color: #00ccff;
-    margin_top: 10px;
+    margin-bottom: 10px;
 }
 
 .why-us-item p {
-    font_size: 16px;
+    font-size: 16px;
 }
 
 /* تماس */
 .contact-info {
     text-align: center;
     padding: 50px 20px;
-    background-color: #1a1a1a;
+    background: rgba(26, 26, 26, 0.9);
 }
 
 .contact-info h2 {
