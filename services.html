@@ -3,36 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Astra Technology - Our Services</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Vazir&family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo" data-fa="دستیار واتس‌اپ" data-ar="مساعد واتساب" data-en="WhatsApp Assistant">WhatsApp Assistant</div>
+        <div class="logo" data-fa="آسترا تکنولوژی" data-ar="أسترا تكنولوجي" data-en="Astra Technology">Astra Technology</div>
         <ul class="nav-links">
             <li><a href="index.html" data-fa="خانه" data-ar="الرئيسية" data-en="Home">Home</a></li>
             <li><a href="services.html" data-fa="سرویس‌ها" data-ar="الخدمات" data-en="Services">Services</a></li>
             <li><a href="about.html" data-fa="درباره ما" data-ar="معلومات عنا" data-en="About Us">About Us</a></li>
             <li><a href="contact.html" data-fa="تماس با ما" data-ar="اتصل بنا" data-en="Contact Us">Contact Us</a></li>
-            <li>
-                <select id="language-switch">
-                    <option value="en" selected>English</option>
-                    <option value="fa">فارسی</option>
-                    <option value="ar">العربية</option>
-                </select>
-            </li>
         </ul>
+        <select id="language-switch">
+            <option value="fa">فارسی</option>
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+        </select>
     </nav>
 
-    <section class="services">
-        <h1 data-fa="سرویس‌های ما" data-ar="خدماتنا" data-en="Our Services">Our Services</h1>
-        <div class="service-list">
-            <div class="service-item" data-fa="پشتیبانی 24/7 (به‌زودی)" data-ar="دعم 24/7 (قريبًا)" data-en="24/7 Support (Soon)">24/7 Support (Soon)</div>
-            <div class="service-item" data-fa="اتوماسیون چت (فعال)" data-ar="أتمتة المحادثة (نشط)" data-en="Chat Automation (Active)">Chat Automation (Active)</div>
-            <div class="service-item" data-fa="تحلیل داده‌ها (در حال توسعه)" data-ar="تحليل البيانات (قيد التطوير)" data-en="Data Analysis (In Development)">Data Analysis (In Development)</div>
-        </div>
-    </section>
+    <div class="background-container">
+        <header class="services-hero">
+            <div class="services-hero-content">
+                <h1 data-fa="سرویس‌های ما - راه‌حل‌های نوآورانه" data-ar="خدماتنا - حلول مبتكرة" data-en="Our Services - Innovative Solutions">Our Services - Innovative Solutions</h1>
+                <p data-fa="ما با ارائه خدمات پیشرفته، کسب‌وکارها را به آینده متصل می‌کنیم." data-ar="نقدم خدمات متطورة تربط الأعمال بالمستقبل." data-en="We connect businesses to the future with cutting-edge services.">We connect businesses to the future with cutting-edge services.</p>
+            </div>
+        </header>
+
+        <section class="services-section">
+            <div class="service-category">
+                <h2 data-fa="برنامه‌نویسی سفارشی" data-ar="برمجة مخصصة" data-en="Custom Programming">Custom Programming</h2>
+                <p data-fa="ما نرم‌افزارهای سفارشی و مقیاس‌پذیر طراحی می‌کنیم که دقیقاً با نیازهای منحصربه‌فرد شما سازگار است. از اپلیکیشن‌های پیچیده تا سیستم‌های مدیریت، همه چیز با بالاترین استانداردها!" data-ar="نصمم برامجًا مخصصة وقابلة للتطوير تتناسب تمامًا مع احتياجاتك الفريدة. من التطبيقات المعقدة إلى أنظمة الإدارة، كل شيء بأعلى المعايير!" data-en="We craft bespoke, scalable software tailored to your unique needs. From complex applications to management systems, all built to the highest standards!">We craft bespoke, scalable software tailored to your unique needs. From complex applications to management systems, all built to the highest standards!</p>
+                <div class="service-image" style="background: url('https://via.placeholder.com/300x200?text=Custom+Programming') no-repeat center center; background-size: cover;"></div>
+            </div>
+
+            <div class="service-category">
+                <h2 data-fa="توسعه وبسایت" data-ar="تطوير مواقع الويب" data-en="Website Development">Website Development</h2>
+                <p data-fa="وبسایت‌های پاسخ‌گو و جذاب با طراحی مدرن، بهینه‌سازی برای موتورهای جستجو و تجربه کاربری بی‌نظیر. ما برند شما را آنلاین به اوج می‌رسانیم!" data-ar="مواقع ويب متجاوبة وجذابة بتصميم عصري، وتحسين محركات البحث وتجربة مستخدم استثنائية. نرفع علامتك التجارية عبر الإنترنت إلى القمة!" data-en="Responsive and stunning websites with modern design, SEO optimization, and an unparalleled user experience. We take your brand to the top online!">Responsive and stunning websites with modern design, SEO optimization, and an unparalleled user experience. We take your brand to the top online!</p>
+                <div class="service-image" style="background: url('https://via.placeholder.com/300x200?text=Website+Development') no-repeat center center; background-size: cover;"></div>
+            </div>
+
+            <div class="service-category">
+                <h2 data-fa="هوش مصنوعی و اتوماسیون" data-ar="الذكاء الاصطناعي والأتمتة" data-en="AI & Automation">AI & Automation</h2>
+                <p data-fa="با استفاده از هوش مصنوعی، فرآیندهای کسب‌وکار شما را خودکار کنید و تحلیل‌های هوشمند دریافت کنید. از چت‌بات‌های پیشرفته تا پیش‌بینی داده‌ها، آینده همین‌جاست!" data-ar="باستخدام الذكاء الاصطناعي، قم بأتمتة عمليات عملك واستلم تحليلات ذكية. من الدردشات المتقدمة إلى توقع البيانات، المستقبل هنا الآن!" data-en="Leverage AI to automate your business processes and gain smart insights. From advanced chatbots to data prediction, the future is here!">Leverage AI to automate your business processes and gain smart insights. From advanced chatbots to data prediction, the future is here!</p>
+                <div class="service-image" style="background: url('https://via.placeholder.com/300x200?text=AI+Automation') no-repeat center center; background-size: cover;"></div>
+            </div>
+
+            <div class="service-category">
+                <h2 data-fa="بازاریابی دیجیتال و واتس‌اپ" data-ar="التسويق الرقمي وواتساب" data-en="Digital Marketing & WhatsApp">Digital Marketing & WhatsApp</h2>
+                <p data-fa="کمپین‌های بازاریابی قدرتمند از طریق واتس‌اپ و شبکه‌های اجتماعی. ارتباط مستقیم با مشتریان و افزایش فروش با استراتژی‌های نوین!" data-ar="حملات تسويقية قوية عبر واتساب والشبكات الاجتماعية. تواصل مباشر مع العملاء وزيادة المبيعات باستراتيجيات حديثة!" data-en="Powerful marketing campaigns via WhatsApp and social media. Direct customer engagement and sales growth with innovative strategies!">Powerful marketing campaigns via WhatsApp and social media. Direct customer engagement and sales growth with innovative strategies!</p>
+                <div class="service-image" style="background: url('https://via.placeholder.com/300x200?text=Digital+Marketing') no-repeat center center; background-size: cover;"></div>
+            </div>
+        </section>
+
+        <footer class="contact-info">
+            <h2 data-fa="با ما در تماس باشید" data-ar="تواصلوا معنا" data-en="Get in Touch">Get in Touch</h2>
+            <p data-fa="ایمیل: it@aiastratech.com" data-ar="البريد: it@aiastratech.com" data-en="Email: it@aiastratech.com">Email: it@aiastratech.com</p>
+            <p data-fa="وبسایت: aiastratech.com" data-ar="الموقع: aiastratech.com" data-en="Website: aiastratech.com">Website: aiastratech.com</p>
+            <p data-fa="تلفن: +968-95259599" data-ar="الهاتف: +968-95259599" data-en="Phone: +968-95259599">Phone: +968-95259599</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
