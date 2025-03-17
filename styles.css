@@ -124,6 +124,14 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 
 .hero-content {
     margin-top: 30px; /* فاصله 30 پیکسل از منو */
+    background: rgba(0, 0, 0, 0.7); /* پس‌زمینه مشکی شفاف */
+    padding: 20px 40px; /* فاصله داخلی برای بهتر دیده شدن */
+    border-radius: 10px; /* گوشه‌های گرد برای جذابیت */
+    transition: background 0.3s; /* برای افکت هور */
+}
+
+.hero-content:hover {
+    background: rgba(0, 0, 0, 0.5); /* تغییر شفافیت با هور */
 }
 
 .hero-content h1 {
