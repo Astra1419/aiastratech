@@ -806,15 +806,17 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 }
 
 .contact-info .clickable-link a {
-    color: #00ccff; /* رنگ آبی برای لینک‌ها */
+    color: #00ccff !important; /* اضافه کردن !important برای اولویت بالاتر */
     text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .contact-info .clickable-link a:hover {
-    color: #66e0ff; /* رنگ روشن‌تر برای هور */
+    color: #00aaff !important; /* اضافه کردن !important برای اولویت بالاتر */
     text-decoration: underline;
 }
+
+
 
 /* انیمیشن‌ها */
 @keyframes fadeIn {
