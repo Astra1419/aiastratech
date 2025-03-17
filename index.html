@@ -3,50 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Intelligent Assistant</title>
+    <title>Astra Technology</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Vazir&family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo" data-fa="دستیار واتس‌اپ" data-ar="مساعد واتساب" data-en="WhatsApp Assistant">WhatsApp Assistant</div>
-        <ul class="nav-links">
-            <li><a href="index.html" data-fa="خانه" data-ar="الرئيسية" data-en="Home">Home</a></li>
-            <li><a href="services.html" data-fa="سرویس‌ها" data-ar="الخدمات" data-en="Services">Services</a></li>
-            <li><a href="about.html" data-fa="درباره ما" data-ar="معلومات عنا" data-en="About Us">About Us</a></li>
-            <li><a href="contact.html" data-fa="تماس با ما" data-ar="اتصل بنا" data-en="Contact Us">Contact Us</a></li>
-            <li>
-                <select id="language-switch">
-                    <option value="en" selected>English</option>
-                    <option value="fa">فارسی</option>
-                    <option value="ar">العربية</option>
-                </select>
-            </li>
-        </ul>
-    </nav>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo" data-fa="آسترا تکنولوژی" data-ar="أسترا تكنولوجي" data-en="Astra Technology">Astra Technology</div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-fa="خانه" data-ar="الرئيسية" data-en="Home">Home</a></li>
+                <li><a href="services.html" data-fa="سرویس‌ها" data-ar="الخدمات" data-en="Services">Services</a></li>
+                <li><a href="about.html" data-fa="درباره ما" data-ar="معلومات عنا" data-en="About Us">About Us</a></li>
+                <li><a href="contact.html" data-fa="تماس با ما" data-ar="اتصل بنا" data-en="Contact Us">Contact Us</a></li>
+            </ul>
+            <select id="language-switch">
+                <option value="en" selected>English</option>
+                <option value="fa">فارسی</option>
+                <option value="ar">العربية</option>
+            </select>
+        </nav>
+        <div class="hero-content">
+            <img src="cover-image.jpg" alt="Astra Technology Cover" class="cover-image">
+            <h1 data-fa="آسترا تکنولوژی - نوآوری در آینده کسب‌وکار" data-ar="أسترا تكنولوجي - مبتكرة مستقبل الأعمال" data-en="Astra Technology - Innovating the Future of Business">Astra Technology - Innovating the Future of Business</h1>
+            <p data-fa="ما نیروی پویایی در تحول دیجیتال هستیم و کسب‌وکارها را با راه‌حل‌های سفارشی مجهز می‌کنیم." data-ar="نحن قوة ديناميكية في التحول الرقمي، نزود الأعمال بحلول مخصصة." data-en="We are a dynamic force in digital transformation, equipping businesses with bespoke solutions.">We are a dynamic force in digital transformation, equipping businesses with bespoke solutions.</p>
+        </div>
+    </header>
 
-    <section class="hero">
-        <h1 data-fa="دستیار هوشمند واتس‌اپ شما" data-ar="مساعد واتساب الذكي الخاص بك" data-en="Your WhatsApp Intelligent Assistant">Your WhatsApp Intelligent Assistant</h1>
-        <p data-fa="کسب‌وکارت رو با یه دستیار سریع، حرفه‌ای و همیشه در دسترس متحول کن!" data-ar="حوّل عملك بمساعد سريع واحترافي ومتوفر دائمًا!" data-en="Transform your business with a fast, professional, and always-available assistant!">Transform your business with a fast, professional, and always-available assistant!</p>
+    <section class="services">
+        <h2 data-fa="سرویس‌های ما" data-ar="خدماتنا" data-en="Our Services">Our Services</h2>
+        <div class="service-list">
+            <div class="service-card">
+                <h3 data-fa="برنامه‌نویسی سفارشی" data-ar="برمجة مخصصة" data-en="Custom Programming">Custom Programming</h3>
+                <p data-fa="راه‌حل‌های نرم‌افزاری مقیاس‌پذیر و امن برای نیازهای شما." data-ar="حلول برمجية قابلة للتطوير وآمنة لاحتياجاتك." data-en="Scalable and secure software solutions for your needs.">Scalable and secure software solutions for your needs.</p>
+            </div>
+            <div class="service-card">
+                <h3 data-fa="توسعه وبسایت" data-ar="تطوير مواقع الويب" data-en="Website Development">Website Development</h3>
+                <p data-fa="وبسایت‌های پاسخ‌گو با طراحی خیره‌کننده." data-ar="مواقع ويب متجاوبة بتصميم مذهل." data-en="Responsive websites with stunning design.">Responsive websites with stunning design.</p>
+            </div>
+            <div class="service-card">
+                <h3 data-fa="هوش مصنوعی" data-ar="الذكاء الاصطناعي" data-en="AI Integration">AI Integration</h3>
+                <p data-fa="اتوماسیون و تحلیل هوشمند برای کسب‌وکار شما." data-ar="أتمتة وتحليل ذكي لأعمالك." data-en="Smart automation and analytics for your business.">Smart automation and analytics for your business.</p>
+            </div>
+            <div class="service-card">
+                <h3 data-fa="واتس‌اپ و بازاریابی" data-ar="واتساب والتسويق" data-en="WhatsApp & Marketing">WhatsApp & Marketing</h3>
+                <p data-fa="ارتباط بهتر با مخاطبان از طریق واتس‌اپ." data-ar="تواصل أفضل مع جمهورك عبر واتساب." data-en="Better engagement with your audience via WhatsApp.">Better engagement with your audience via WhatsApp.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3 data-fa="1. دمو ویدیو" data-ar="1. فيديو توضيحي" data-en="1. Demo Video">1. Demo Video</h3>
-            <p data-fa="یه نگاه سریع به عملکرد دستیار ما توی عمل." data-ar="نظرة سريعة على أداء مساعدنا في العمل." data-en="A quick look at our assistant in action.">A quick look at our assistant in action.</p>
-            <a href="https://github.com/ysfmrz/WhatsApp-Business-Intelligent-Assistant#demo" class="btn" data-fa="مشاهده ویدیو" data-ar="شاهد الفيديو" data-en="Watch Video">Watch Video</a>
-        </div>
-        <div class="feature-card">
-            <h3 data-fa="2. معرفی پنل‌ها" data-ar="2. تعريف باللوحات" data-en="2. Panels Intro">2. Panels Intro</h3>
-            <p data-fa="با پنل‌های ساده و کاربردیمون آشنا شو." data-ar="تعرف على لوحاتنا البسيطة والعملية." data-en="Get to know our simple and practical panels.">Get to know our simple and practical panels.</p>
-            <a href="https://github.com/ysfmrz/WhatsApp-Business-Intelligent-Assistant#panels" class="btn" data-fa="بیشتر بدون" data-ar="اعرف المزيد" data-en="Learn More">Learn More</a>
-        </div>
-        <div class="feature-card">
-            <h3 data-fa="3. کد منبع" data-ar="3. الكود المصدري" data-en="3. Source Code">3. Source Code</h3>
-            <p data-fa="خودت دست به کار شو و کد رو بررسی کن." data-ar="ابدأ بنفسك وتحقق من الكود." data-en="Dive in and check out the code yourself.">Dive in and check out the code yourself.</p>
-            <a href="https://github.com/ysfmrz/WhatsApp-Business-Intelligent-Assistant" class="btn" data-fa="گیت‌هاب" data-ar="جيت هاب" data-en="GitHub">GitHub</a>
+    <section class="why-us">
+        <h2 data-fa="چرا آسترا؟" data-ar="لماذا أسترا؟" data-en="Why Choose Astra?">Why Choose Astra?</h2>
+        <div class="why-us-list">
+            <div class="why-us-item">
+                <h3 data-fa="تخصص" data-ar="الخبرة" data-en="Expertise">Expertise</h3>
+                <p data-fa="تیمی با تجربه در برنامه‌نویسی، طراحی و بازاریابی." data-ar="فريق ذو خبرة في البرمجة والتصميم والتسويق." data-en="A team with experience in programming, design, and marketing.">A team with experience in programming, design, and marketing.</p>
+            </div>
+            <div class="why-us-item">
+                <h3 data-fa="سفارشی‌سازی" data-ar="التخصيص" data-en="Customization">Customization</h3>
+                <p data-fa="راه‌حل‌هایی دقیقاً مطابق با نیازهای شما." data-ar="حلول مصممة خصيصًا لاحتياجاتك." data-en="Solutions tailored exactly to your needs.">Solutions tailored exactly to your needs.</p>
+            </div>
+            <div class="why-us-item">
+                <h3 data-fa="پشتیبانی" data-ar="الدعم" data-en="Support">Support</h3>
+                <p data-fa="پشتیبانی مداوم پس از تحویل پروژه." data-ar="دعم مستمر بعد تسليم المشروع." data-en="Ongoing support after project delivery.">Ongoing support after project delivery.</p>
+            </div>
         </div>
     </section>
+
+    <footer class="contact-info">
+        <h2 data-fa="با ما در تماس باشید" data-ar="تواصلوا معنا" data-en="Get in Touch">Get in Touch</h2>
+        <p data-fa="ایمیل: it@aiastratech.com" data-ar="البريد: it@aiastratech.com" data-en="Email: it@aiastratech.com">Email: it@aiastratech.com</p>
+        <p data-fa="وبسایت: aiastratech.com" data-ar="الموقع: aiastratech.com" data-en="Website: aiastratech.com">Website: aiastratech.com</p>
+        <p data-fa="تلفن: +968-95259599" data-ar="الهاتف: +968-95259599" data-en="Phone: +968-95259599">Phone: +968-95259599</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
