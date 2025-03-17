@@ -120,6 +120,7 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     align-items: center;
     text-align: center;
     padding: 20px;
+    margin-top: 30px;
 }
 
 .hero-content {
