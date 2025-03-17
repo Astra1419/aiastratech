@@ -23,6 +23,7 @@ body {
     background-color: rgba(26, 26, 26, 0.8);
     padding: 20px 40px;
     z-index: 1000; /* اولویت بالا برای همیشه بالای صفحه */
+    margin-bottom: 10px;
 }
 
 .logo {
