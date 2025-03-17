@@ -80,6 +80,34 @@ a {
     background-color: #333;
 }
 
+/* استایل دکمه هامبورگر */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* تنظیم جهت منو و سوییچ زبان */
 html[lang="en"] .navbar {
     flex-direction: row;
@@ -810,6 +838,11 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 }
 
 /* تنظیمات زبان */
+html[lang="en"] {
+    direction: ltr;
+    font-family: 'Roboto', sans-serif;
+}
+
 html[lang="fa"] {
     direction: rtl;
     font-family: 'Vazir', sans-serif;
@@ -820,14 +853,12 @@ html[lang="ar"] {
     font-family: 'Noto Naskh Arabic', sans-serif;
 }
 
-
-/* ... (بخش‌های قبلی که قبلاً دادی رو نگه دار) ... */
-
 /* تنظیمات ریسپانسیو برای موبایل (تا 768px) */
 @media (max-width: 768px) {
     /* نویگیشن بار */
     .navbar {
         padding: 15px 20px;
+        justify-content: space-between;
     }
 
     .logo {
@@ -845,21 +876,36 @@ html[lang="ar"] {
         padding: 20px 0;
         gap: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .nav-links.active {
         display: flex; /* نمایش منو با اضافه شدن کلاس active */
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .nav-links a {
         font-size: 16px;
         text-align: center;
         padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 204, 255, 0.2);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
     }
 
     #language-switch {
         padding: 6px;
         font-size: 14px;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* نمایش دکمه هامبورگر توی موبایل */
     }
 
     /* هدر صفحه اصلی */
@@ -958,8 +1004,4 @@ html[lang="ar"] {
     .service-card, .stat-item, .why-us-item, .process-step, .contact-item {
         width: 45%;
     }
-}
-html[lang="en"] {
-    direction: ltr;
-    font-family: 'Roboto', sans-serif;
 }
