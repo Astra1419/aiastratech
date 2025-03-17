@@ -820,6 +820,145 @@ html[lang="ar"] {
     font-family: 'Noto Naskh Arabic', sans-serif;
 }
 
+
+/* ... (بخش‌های قبلی که قبلاً دادی رو نگه دار) ... */
+
+/* تنظیمات ریسپانسیو برای موبایل (تا 768px) */
+@media (max-width: 768px) {
+    /* نویگیشن بار */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        display: none; /* مخفی کردن منو توی موبایل به صورت پیش‌فرض */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 26, 26, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex; /* نمایش منو با اضافه شدن کلاس active */
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #language-switch {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    /* هدر صفحه اصلی */
+    .hero {
+        height: 80vh;
+        padding: 10px;
+    }
+
+    .hero-content {
+        padding: 20px 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+    /* بخش‌های متنی */
+    .vision-section, .services, .stats-section, .mission-values, .why-us, .process-section, .contact-details, .thank-you {
+        padding: 60px 10px;
+    }
+
+    .vision-section h2, .services h2, .stats-section h2, .mission-values h2, .why-us h2, .process-section h2, .contact-details h2, .thank-you h2 {
+        font-size: 36px;
+    }
+
+    .vision-section p, .mission p {
+        font-size: 18px;
+    }
+
+    /* کارت‌ها و المان‌های انعطاف‌پذیر */
+    .service-list, .stats, .why-us-list, .process-steps, .contact-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service-card, .stat-item, .why-us-item, .process-step, .contact-item {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .service-category {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    /* فوتر */
+    .contact-info {
+        padding: 40px 10px;
+    }
+
+    .contact-info h2 {
+        font-size: 36px;
+    }
+
+    .contact-info .clickable-link {
+        font-size: 16px;
+    }
+}
+
+/* تنظیمات ریسپانسیو برای تبلت (768px تا 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    .service-list, .stats, .why-us-list, .process-steps, .contact-items {
+        gap: 30px;
+    }
+
+    .service-card, .stat-item, .why-us-item, .process-step, .contact-item {
+        width: 45%;
+    }
+}
 html[lang="en"] {
     direction: ltr;
     font-family: 'Roboto', sans-serif;
