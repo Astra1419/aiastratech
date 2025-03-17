@@ -113,18 +113,18 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 
 /* هدر */
 .hero {
-    height: 50vh;
+    height: 90vh; /* تغییر به 90vh برای نزدیک‌تر شدن */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* تغییر به flex-start برای نزدیک شدن به بالا */
     align-items: center;
     text-align: center;
     padding: 20px;
-    margin-top: 30px;
+    padding-top: 20px; /* کاهش فاصله از منو */
 }
 
 .hero-content {
-    margin-top: 10px; /* فاصله 30 پیکسل از منو */
+    margin-top: 10px; /* کاهش فاصله از 30 به 10 پیکسل */
     background: rgba(0, 0, 0, 0.7); /* پس‌زمینه مشکی شفاف */
     padding: 20px 40px; /* فاصله داخلی برای بهتر دیده شدن */
     border-radius: 10px; /* گوشه‌های گرد برای جذابیت */
