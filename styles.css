@@ -1,0 +1,192 @@
+﻿/* تنظیمات کلی */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* نویگیشن بار */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00cc99;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+    .nav-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
+
+        .nav-links a:hover {
+            color: #00cc99;
+        }
+
+#language-switch {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #00cc99;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* هیرو */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+}
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #00cc99;
+    }
+
+    .hero p {
+        font-size: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+/* ویژگی‌ها */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .feature-card h3 {
+        color: #00cc99;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 16px;
+    }
+
+.btn {
+    display: inline-block;
+    background-color: #00cc99;
+    color: #0d0d0d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+    .btn:hover {
+        background-color: #fff;
+    }
+
+/* سرویس‌ها */
+.services {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+    .services h1 {
+        font-size: 36px;
+        color: #00cc99;
+        margin-bottom: 40px;
+    }
+
+.service-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+/* درباره ما */
+.about {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+    .about h1 {
+        font-size: 36px;
+        color: #00cc99;
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 18px;
+    }
+
+/* تماس با ما */
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+    .contact h1 {
+        font-size: 36px;
+        color: #00cc99;
+        margin-bottom: 20px;
+    }
+
+    .contact p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+/* تنظیمات RTL و LTR */
+html[lang="fa"], html[lang="ar"] {
+    direction: rtl;
+}
+
+html[lang="en"] {
+    direction: ltr;
+}
