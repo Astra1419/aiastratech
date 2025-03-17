@@ -799,3 +799,27 @@ html[lang="en"] {
     direction: ltr;
     font-family: 'Roboto', sans-serif;
 }
+
+
+/* استایل برای پاراگراف‌های قابل کلیک در فوتر */
+.contact-info .clickable-link {
+    font-size: 18px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.contact-info .clickable-link a {
+    color: #00ccff; /* رنگ آبی روشن برای لینک‌ها */
+    text-decoration: none; /* حذف خط زیرین پیش‌فرض */
+    transition: color 0.3s ease;
+}
+
+.contact-info .clickable-link a:hover {
+    color: #66e0ff; /* تغییر رنگ به آبی روشن‌تر هنگام هور */
+    text-decoration: underline; /* افزودن خط زیرین هنگام هور */
+}
+
+/* برای متن‌های بدون لینک (مثل شماره تلفن) */
+.contact-info .clickable-link:not(:has(a)) {
+    color: #ccc; /* رنگ خاکستری برای متن‌های بدون لینک */
+}
