@@ -13,6 +13,12 @@ body {
     overflow-x: hidden;
 }
 
+/* استایل عمومی برای لینک‌ها */
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 /* نویگیشن بار */
 .navbar {
     position: fixed;
@@ -70,6 +76,10 @@ body {
     transition: background 0.3s;
 }
 
+#language-switch:hover {
+    background-color: #333;
+}
+
 /* تنظیم جهت منو و سوییچ زبان */
 html[lang="en"] .navbar {
     flex-direction: row;
@@ -77,10 +87,12 @@ html[lang="en"] .navbar {
 
 html[lang="en"] .nav-links {
     margin-left: 30px;
+    margin-right: 0;
 }
 
 html[lang="en"] #language-switch {
     margin-left: auto;
+    margin-right: 0;
 }
 
 html[lang="fa"], html[lang="ar"] {
@@ -93,10 +105,12 @@ html[lang="fa"] .navbar, html[lang="ar"] .navbar {
 
 html[lang="fa"] .nav-links, html[lang="ar"] .nav-links {
     margin-right: 30px;
+    margin-left: 0;
 }
 
 html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     margin-right: auto;
+    margin-left: 0;
 }
 
 /* کاور پس‌زمینه */
@@ -252,7 +266,6 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 
 .services h2 a {
     color: #00ccff;
-    text-decoration: none;
 }
 
 .services h2 {
@@ -758,9 +771,21 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     text-transform: uppercase;
 }
 
-.contact-info p {
+.contact-info .clickable-link {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #ccc; /* رنگ پیش‌فرض برای متن‌های بدون لینک */
+}
+
+.contact-info .clickable-link a {
+    color: #00ccff; /* رنگ آبی برای لینک‌ها */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-info .clickable-link a:hover {
+    color: #66e0ff; /* رنگ روشن‌تر برای هور */
+    text-decoration: underline;
 }
 
 /* انیمیشن‌ها */
@@ -798,33 +823,4 @@ html[lang="ar"] {
 html[lang="en"] {
     direction: ltr;
     font-family: 'Roboto', sans-serif;
-}
-
-/* استایل برای پاراگراف‌های قابل کلیک در فوتر */
-.contact-info .clickable-link {
-    font-size: 18px;
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-}
-
-/* استایل لینک‌ها با اولویت بالاتر */
-.contact-info .clickable-link a {
-    color: #00ccff !important; /* اولویت بالاتر برای رنگ */
-    text-decoration: none !important; /* حذف خط زیرین پیش‌فرض */
-    transition: color 0.3s ease !important;
-}
-
-/* افکت هور برای لینک‌ها */
-.contact-info .clickable-link a:hover {
-    color: #66e0ff !important; /* تغییر رنگ به آبی روشن‌تر هنگام هور */
-    text-decoration: underline !important; /* افزودن خط زیرین هنگام هور */
-}
-
-/* برای متن‌های بدون لینک (مثل شماره تلفن) */
-.contact-info .clickable-link:not(:has(a)) {
-    color: #ccc; /* رنگ خاکستری برای متن‌های بدون لینک */
-}
-/* استثنا برای لینک‌های داخل فوتر */
-.contact-info a {
-    color: #00ccff !important;
 }
