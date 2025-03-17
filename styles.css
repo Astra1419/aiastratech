@@ -6,35 +6,73 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* فونت پیش‌فرض انگلیسی */
+    font-family: 'Roboto', sans-serif;
     background-color: #0d0d0d;
     color: #ffffff;
     line-height: 1.6;
 }
 
+/* هدر */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cover-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #00ccff;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* نویگیشن بار */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1a1a1a;
-    padding: 20px 40px;
-    position: sticky;
+    position: absolute;
     top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 20px 40px;
     z-index: 100;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #00cc99;
+    color: #00ccff;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
-    align-items: center;
 }
 
 .nav-links a {
@@ -45,83 +83,144 @@ body {
 }
 
 .nav-links a:hover {
-    color: #00cc99;
+    color: #00ccff;
 }
 
 #language-switch {
     background-color: #1a1a1a;
     color: #fff;
-    border: 1px solid #00cc99;
+    border: 1px solid #00ccff;
     padding: 5px;
     border-radius: 5px;
     font-size: 16px;
 }
 
-/* هیرو */
-.hero {
+/* تنظیم جهت منو و سوییچ زبان */
+html[lang="en"] .navbar {
+    flex-direction: row;
+}
+
+html[lang="en"] .nav-links {
+    margin-left: 30px;
+}
+
+html[lang="en"] #language-switch {
+    margin-left: auto;
+}
+
+html[lang="fa"], html[lang="ar"] {
+    direction: rtl;
+}
+
+html[lang="fa"] .navbar, html[lang="ar"] .navbar {
+    flex-direction: row-reverse;
+}
+
+html[lang="fa"] .nav-links, html[lang="ar"] .nav-links {
+    margin-right: 30px;
+}
+
+html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
+    margin-right: auto;
+}
+
+/* سرویس‌ها */
+.services {
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    padding: 80px 20px;
+    background-color: #1a1a1a;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #00cc99;
+.services h2 {
+    font-size: 36px;
+    color: #00ccff;
+    margin-bottom: 40px;
 }
 
-.hero p {
-    font-size: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* ویژگی‌ها */
-.features {
+.service-list {
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 50px 20px;
     flex-wrap: wrap;
 }
 
-.feature-card {
-    background-color: #1a1a1a;
+.service-card {
+    background-color: #0d0d0d;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     transition: transform 0.3s;
 }
 
-.feature-card:hover {
+.service-card:hover {
     transform: translateY(-10px);
 }
 
-.feature-card h3 {
-    color: #00cc99;
+.service-card h3 {
+    color: #00ccff;
     margin-bottom: 10px;
 }
 
-.feature-card p {
+.service-card p {
     font-size: 16px;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #00cc99;
-    color: #0d0d0d;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 15px;
-    transition: background-color 0.3s;
+/* چرا ما */
+.why-us {
+    text-align: center;
+    padding: 80px 20px;
 }
 
-.btn:hover {
-    background-color: #fff;
+.why-us h2 {
+    font-size: 36px;
+    color: #00ccff;
+    margin-bottom: 40px;
 }
 
-/* تنظیمات جهت و فونت برای زبان‌ها */
+.why-us-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.why-us-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+ 10px;
+    width: 300p
+    transition: transform 0x;
+}
+
+.why-us-item h3 {
+    color: #00ccff;
+    margin_top: 10px;
+}
+
+.why-us-item p {
+    font_size: 16px;
+}
+
+/* تماس */
+.contact-info {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+}
+
+.contact-info h2 {
+    font-size: 36px;
+    color: #00ccff;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* تنظیمات زبان */
 html[lang="fa"] {
     direction: rtl;
     font-family: 'Vazir', sans-serif;
