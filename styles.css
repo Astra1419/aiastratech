@@ -824,3 +824,7 @@ html[lang="en"] {
 .contact-info .clickable-link:not(:has(a)) {
     color: #ccc; /* رنگ خاکستری برای متن‌های بدون لینک */
 }
+/* استثنا برای لینک‌های داخل فوتر */
+.contact-info a {
+    color: #00ccff !important;
+}
