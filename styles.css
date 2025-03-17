@@ -47,10 +47,14 @@ body {
     padding: 20px;
 }
 
+.hero-content {
+    margin-top: 30px; /* فاصله 30 پیکسل از منو */
+}
+
 .hero-content h1 {
     font-size: 48px;
     color: #00ccff;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
@@ -63,14 +67,14 @@ body {
 
 /* نویگیشن بار */
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     display: flex;
     align-items: center;
     background-color: rgba(26, 26, 26, 0.8);
     padding: 20px 40px;
-    z-index: 100;
+    z-index: 1000; /* اولویت بالا برای همیشه بالای صفحه بمونه */
 }
 
 .logo {
@@ -138,12 +142,16 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 .services {
     text-align: center;
     padding: 80px 20px;
-    background: rgba(26, 26, 26, 0.9); /* شفافیت برای ادغام با پس‌زمینه */
+    background: rgba(26, 26, 26, 0.9);
+}
+
+.services h2 a {
+    color: #00ccff;
+    text-decoration: none;
 }
 
 .services h2 {
     font-size: 36px;
-    color: #00ccff;
     margin-bottom: 40px;
 }
 
