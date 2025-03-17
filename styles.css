@@ -1,4 +1,4 @@
-﻿/* تنظیمات کلی */
+/* تنظیمات کلی */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* فونت پیش‌فرض انگلیسی */
     background-color: #0d0d0d;
     color: #ffffff;
     line-height: 1.6;
@@ -37,16 +37,16 @@ body {
     align-items: center;
 }
 
-    .nav-links a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 18px;
-        transition: color 0.3s;
-    }
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
 
-        .nav-links a:hover {
-            color: #00cc99;
-        }
+.nav-links a:hover {
+    color: #00cc99;
+}
 
 #language-switch {
     background-color: #1a1a1a;
@@ -64,17 +64,17 @@ body {
     background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
 }
 
-    .hero h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
-        color: #00cc99;
-    }
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #00cc99;
+}
 
-    .hero p {
-        font-size: 20px;
-        max-width: 600px;
-        margin: 0 auto;
-    }
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
 /* ویژگی‌ها */
 .features {
@@ -93,18 +93,18 @@ body {
     transition: transform 0.3s;
 }
 
-    .feature-card:hover {
-        transform: translateY(-10px);
-    }
+.feature-card:hover {
+    transform: translateY(-10px);
+}
 
-    .feature-card h3 {
-        color: #00cc99;
-        margin-bottom: 10px;
-    }
+.feature-card h3 {
+    color: #00cc99;
+    margin-bottom: 10px;
+}
 
-    .feature-card p {
-        font-size: 16px;
-    }
+.feature-card p {
+    font-size: 16px;
+}
 
 .btn {
     display: inline-block;
@@ -117,76 +117,22 @@ body {
     transition: background-color 0.3s;
 }
 
-    .btn:hover {
-        background-color: #fff;
-    }
-
-/* سرویس‌ها */
-.services {
-    text-align: center;
-    padding: 80px 20px;
+.btn:hover {
+    background-color: #fff;
 }
 
-    .services h1 {
-        font-size: 36px;
-        color: #00cc99;
-        margin-bottom: 40px;
-    }
-
-.service-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.service-item {
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-}
-
-/* درباره ما */
-.about {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-    .about h1 {
-        font-size: 36px;
-        color: #00cc99;
-        margin-bottom: 20px;
-    }
-
-    .about p {
-        max-width: 700px;
-        margin: 0 auto;
-        font-size: 18px;
-    }
-
-/* تماس با ما */
-.contact {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-    .contact h1 {
-        font-size: 36px;
-        color: #00cc99;
-        margin-bottom: 20px;
-    }
-
-    .contact p {
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
-
-/* تنظیمات RTL و LTR */
-html[lang="fa"], html[lang="ar"] {
+/* تنظیمات جهت و فونت برای زبان‌ها */
+html[lang="fa"] {
     direction: rtl;
+    font-family: 'Vazir', sans-serif;
+}
+
+html[lang="ar"] {
+    direction: rtl;
+    font-family: 'Noto Naskh Arabic', sans-serif;
 }
 
 html[lang="en"] {
     direction: ltr;
+    font-family: 'Roboto', sans-serif;
 }
