@@ -800,7 +800,6 @@ html[lang="en"] {
     font-family: 'Roboto', sans-serif;
 }
 
-
 /* استایل برای پاراگراف‌های قابل کلیک در فوتر */
 .contact-info .clickable-link {
     font-size: 18px;
@@ -808,15 +807,17 @@ html[lang="en"] {
     transition: color 0.3s ease;
 }
 
+/* استایل لینک‌ها با اولویت بالاتر */
 .contact-info .clickable-link a {
-    color: #00ccff; /* رنگ آبی روشن برای لینک‌ها */
-    text-decoration: none; /* حذف خط زیرین پیش‌فرض */
-    transition: color 0.3s ease;
+    color: #00ccff !important; /* اولویت بالاتر برای رنگ */
+    text-decoration: none !important; /* حذف خط زیرین پیش‌فرض */
+    transition: color 0.3s ease !important;
 }
 
+/* افکت هور برای لینک‌ها */
 .contact-info .clickable-link a:hover {
-    color: #66e0ff; /* تغییر رنگ به آبی روشن‌تر هنگام هور */
-    text-decoration: underline; /* افزودن خط زیرین هنگام هور */
+    color: #66e0ff !important; /* تغییر رنگ به آبی روشن‌تر هنگام هور */
+    text-decoration: underline !important; /* افزودن خط زیرین هنگام هور */
 }
 
 /* برای متن‌های بدون لینک (مثل شماره تلفن) */
