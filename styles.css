@@ -12,70 +12,17 @@ body {
     line-height: 1.6;
 }
 
-/* کاور پس‌زمینه */
-.background-container {
-    background: url('cover-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    position: relative;
-}
-
-.background-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* لایه تیره برای خوانایی متن */
-    z-index: 1;
-}
-
-.background-container > * {
-    position: relative;
-    z-index: 2;
-}
-
-/* هدر */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    padding-top: 80px; /* برای جلوگیری از همپوشانی با منوی ثابت */
-}
-
-.hero-content {
-    margin-top: 30px; /* فاصله 30 پیکسل از منو */
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    color: #00ccff;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.hero-content p {
-    font-size: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
 /* نویگیشن بار */
 .navbar {
-    position: fixed; /* منو همیشه بالای صفحه ثابت بمونه */
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     display: flex;
     align-items: center;
     background-color: rgba(26, 26, 26, 0.8);
     padding: 20px 40px;
-    z-index: 1000; /* اولویت بالا برای همیشه بالای صفحه بمونه */
+    z-index: 1000; /* اولویت بالا برای همیشه بالای صفحه */
 }
 
 .logo {
@@ -137,6 +84,60 @@ html[lang="fa"] .nav-links, html[lang="ar"] .nav-links {
 
 html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     margin-right: auto;
+}
+
+/* کاور پس‌زمینه */
+.background-container {
+    background: url('cover-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 80px; /* برای جلوگیری از همپوشانی با منو */
+}
+
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* لایه تیره برای خوانایی متن */
+    z-index: 1;
+}
+
+.background-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* هدر */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content {
+    margin-top: 30px; /* فاصله 30 پیکسل از منو */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #00ccff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* سرویس‌ها */
@@ -208,7 +209,7 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     background-color: rgba(13, 13, 13, 0.9);
     padding: 20px;
     border-radius: 10px;
-    width: 300px; /* اصلاح واحد */
+    width: 300px;
     transition: transform 0.3s;
 }
 
@@ -218,11 +219,11 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
 
 .why-us-item h3 {
     color: #00ccff;
-    margin-bottom: 10px; /* اصلاح خطا: margin_top به margin-bottom */
+    margin-bottom: 10px;
 }
 
 .why-us-item p {
-    font-size: 16px; /* اصلاح خطا: font_size به font-size */
+    font-size: 16px;
 }
 
 /* تماس */
