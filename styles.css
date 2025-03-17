@@ -60,19 +60,14 @@ body {
 }
 
 #language-switch {
-    background: linear-gradient(45deg, #1a1a1a, #333);
+    background-color: #1a1a1a;
     color: #fff;
     border: 1px solid #00ccff;
     padding: 8px;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-}
-
-#language-switch:hover {
-    background: linear-gradient(45deg, #333, #1a1a1a);
-    transform: scale(1.05);
+    transition: background 0.3s;
 }
 
 /* تنظیم جهت منو و سوییچ زبان */
@@ -621,11 +616,12 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     margin: 0 auto;
 }
 
-/* فرم تماس */
+/* فرم تماس (هاید شده) */
 .contact-form-section {
     padding: 100px 20px;
     background: rgba(26, 26, 26, 0.9);
     text-align: center;
+    display: none; /* هاید کردن بخش فرم */
 }
 
 .contact-form-section h2 {
