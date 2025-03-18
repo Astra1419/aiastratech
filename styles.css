@@ -963,18 +963,6 @@ html[lang="ar"] {
         max-width: 400px;
     }
 
-    /* فوتر */
-    .contact-info {
-        padding: 40px 10px;
-    }
-
-    .contact-info h2 {
-        font-size: 36px;
-    }
-
-    .contact-info .clickable-link {
-        font-size: 16px;
-    }
 }
 
 /* تنظیمات ریسپانسیو برای تبلت (768px تا 1024px) */
