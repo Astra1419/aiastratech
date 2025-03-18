@@ -995,3 +995,18 @@ html[lang="ar"] {
         width: 45%;
     }
 }
+
+.contact-info .clickable-link {
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: block; /* باعث میشه کل خط مثل یه بلاک عمل کنه */
+}
+
+.contact-info .clickable-link a {
+    color: #00ccff !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block; /* لینک رو توی خط نگه می‌داره */
+    width: 100%; /* کل عرض خط رو می‌گیره */
+}
+
