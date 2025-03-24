@@ -388,6 +388,62 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     transform: scale(1.1);
 }
 
+.whatsapp-panel-promo {
+    width: 100%;
+    max-width: 900px;
+    background: linear-gradient(135deg, rgba(0, 204, 255, 0.1), rgba(0, 0, 0, 0.7));
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 40px auto;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    transition: transform 0.4s, box-shadow 0.4s;
+    animation: slideUp 1s ease-out;
+}
+
+.whatsapp-panel-promo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 204, 255, 0.4);
+}
+
+.whatsapp-panel-promo p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #e6e6e6;
+}
+
+.whatsapp-panel-promo a {
+    color: #00ccff;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.whatsapp-panel-promo a:hover {
+    color: #66e0ff;
+}
+
+/* تنظیمات ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .whatsapp-panel-promo {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .whatsapp-panel-promo p {
+        font-size: 16px;
+    }
+}
+
+/* تنظیمات ریسپانسیو برای تبلت */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .whatsapp-panel-promo p {
+        font-size: 18px;
+    }
+}
+
+
+
 /* بخش آمار و دستاوردها */
 .stats-section {
     text-align: center;
