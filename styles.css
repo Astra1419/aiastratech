@@ -6,15 +6,15 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0a0f1a;
+    background: #0a0f1a;
     color: #e0e6ff;
-    line-height: 1.7;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
+    color: #00d4ff;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -22,25 +22,22 @@ a {
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(10, 15, 26, 0.9);
-    padding: 15px 40px;
+    padding: 20px 40px;
+    background: rgba(10, 15, 26, 0.95);
+    backdrop-filter: blur(8px);
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     color: #00d4ff;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: color 0.3s ease;
+    letter-spacing: 1px;
 }
 
 .logo:hover {
@@ -50,131 +47,77 @@ a {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: #e0e6ff;
     font-size: 16px;
     font-weight: 500;
-    padding: 8px 12px;
+    padding: 8px 15px;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #00d4ff;
-    background: rgba(0, 212, 255, 0.1);
-    transform: translateY(-2px);
+    background: rgba(0, 212, 255, 0.2);
+    color: #fff;
 }
 
 #language-switch {
     background: rgba(255, 255, 255, 0.1);
-    color: #e0e6ff;
     border: none;
-    padding: 8px 12px;
+    color: #e0e6ff;
+    padding: 8px;
     border-radius: 5px;
-    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 #language-switch:hover {
-    background: rgba(0, 212, 255, 0.2);
-    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.3);
 }
 
 .menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
     cursor: pointer;
 }
 
 .menu-toggle span {
-    width: 25px;
-    height: 2px;
-    background-color: #e0e6ff;
+    width: 30px;
+    height: 3px;
+    background: #e0e6ff;
     transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* تنظیمات جهت برای زبان‌ها */
-html[lang="en"] .navbar {
-    flex-direction: row;
-}
-
-html[lang="fa"], html[lang="ar"] {
-    direction: rtl;
-}
-
-html[lang="fa"] .navbar, html[lang="ar"] .navbar {
-    flex-direction: row-reverse;
-}
-
-/* پس‌زمینه اصلی */
-.background-container {
-    background: linear-gradient(135deg, #0a0f1a 0%, #1a2333 100%);
+/* هدر */
+.hero {
     min-height: 100vh;
-    padding-top: 80px;
-    position: relative;
-    overflow: hidden;
-}
-
-.background-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(0, 212, 255, 0.1), transparent 70%);
-    z-index: 1;
-}
-
-.background-container > * {
-    position: relative;
-    z-index: 2;
-}
-
-/* هدر عمومی (Hero) */
-.hero, .services-hero, .about-hero, .contact-hero {
-    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 80px 20px 20px;
+    background: linear-gradient(135deg, rgba(10, 15, 26, 0.9), rgba(0, 212, 255, 0.1));
 }
 
-.hero-content, .services-hero-content, .about-hero-content, .contact-hero-content {
-    max-width: 900px;
+.hero-content {
+    max-width: 800px;
     padding: 40px;
-    background: rgba(10, 15, 26, 0.85);
-    border-radius: 15px;
+    background: rgba(20, 30, 50, 0.8);
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    animation: fadeInUp 1s ease-out;
 }
 
-.hero-content h1, .services-hero-content h1, .about-hero-content h1, .contact-hero-content h1 {
+.hero-content h1 {
     font-size: 48px;
     color: #00d4ff;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0, 212, 255, 0.3);
 }
 
-.hero-content p, .services-hero-content p, .about-hero-content p, .contact-hero-content p {
+.hero-content p {
     font-size: 20px;
     color: #ccd6f6;
     margin-bottom: 30px;
@@ -182,10 +125,9 @@ html[lang="fa"] .navbar, html[lang="ar"] .navbar {
 
 .cta-button {
     display: inline-block;
-    padding: 14px 35px;
+    padding: 15px 35px;
     background: linear-gradient(45deg, #00d4ff, #007bff);
     color: #fff;
-    font-size: 18px;
     font-weight: 600;
     border-radius: 50px;
     box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
@@ -194,357 +136,134 @@ html[lang="fa"] .navbar, html[lang="ar"] .navbar {
 
 .cta-button:hover {
     background: linear-gradient(45deg, #007bff, #00d4ff);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
 }
 
-/* بخش چشم‌انداز */
-.vision-section {
+/* بخش‌های اصلی */
+.vision, .services-preview, .about-story, .values, .services-list, .contact-info {
     padding: 80px 20px;
     text-align: center;
 }
 
-.vision-section h2 {
-    font-size: 36px;
-    color: #00d4ff;
-    margin-bottom: 20px;
-}
-
-.vision-section p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #ccd6f6;
-}
-
-/* سرویس‌ها در صفحه اصلی */
-.services {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.services h2 {
-    font-size: 36px;
-    color: #00d4ff;
-    margin-bottom: 40px;
-}
-
-.service-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.service-card {
-    width: 280px;
-    background: rgba(20, 30, 50, 0.9);
-    padding: 25px;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
-
-.service-card h3 {
-    font-size: 22px;
-    color: #00d4ff;
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    font-size: 16px;
-    color: #ccd6f6;
-}
-
-/* آمار در صفحه اصلی */
-.stats-section {
-    padding: 80px 20px;
-    background: rgba(20, 30, 50, 0.9);
-    text-align: center;
-}
-
-.stats-section h2 {
-    font-size: 36px;
-    color: #00d4ff;
-    margin-bottom: 40px;
-}
-
-.stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.stat-item {
-    width: 300px;
-    padding: 20px;
-}
-
-.stat-item h3 {
-    font-size: 24px;
-    color: #00d4ff;
-    margin-bottom: 15px;
-}
-
-.stat-item p {
-    font-size: 16px;
-    color: #ccd6f6;
-}
-
-/* پنل واتس‌اپ */
-.whatsapp-promo-highlight {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px;
-    background: linear-gradient(135deg, #00d4ff, #1a2333);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
-    text-align: center;
-    animation: pulse 2s infinite;
-}
-
-.promo-content h3 {
-    font-size: 28px;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.promo-content p {
-    font-size: 18px;
-    color: #e0e6ff;
-    margin-bottom: 20px;
-}
-
-.promo-content a {
-    color: #fff;
-    font-weight: 600;
-    padding: 10px 20px;
-    background: #007bff;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-.promo-content a:hover {
-    background: #00d4ff;
-    transform: scale(1.05);
-}
-
-/* سرویس‌ها در صفحه Services */
-.services-section {
-    padding: 80px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-}
-
-.service-category {
-    width: 450px;
-    background: rgba(20, 30, 50, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.service-category:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
-
-.service-category h2 {
-    font-size: 28px;
-    color: #00d4ff;
-    margin-bottom: 20px;
-}
-
-.service-category p {
-    font-size: 16px;
-    color: #ccd6f6;
-    margin-bottom: 20px;
-}
-
-.service-image {
-    height: 200px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.service-image:hover {
-    transform: scale(1.05);
-}
-
-/* صفحه About */
-.mission-values, .why-us, .process-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.mission-values h2, .why-us h2, .process-section h2 {
-    font-size: 36px;
-    color: #00d4ff;
-    margin-bottom: 40px;
-}
-
-.mission, .values {
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
-
-.mission h3, .values h3 {
-    font-size: 24px;
-    color: #00d4ff;
-    margin-bottom: 15px;
-}
-
-.values ul {
-    list-style: none;
-    text-align: left;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.values li {
-    font-size: 16px;
-    color: #ccd6f6;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.values li:before {
-    content: "•";
-    color: #00d4ff;
-    position: absolute;
-    left: 0;
-}
-
-.why-us-list, .process-steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.why-us-item, .process-step {
-    width: 300px;
-    padding: 20px;
-    background: rgba(20, 30, 50, 0.9);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-}
-
-.why-us-item:hover, .process-step:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
-
-.why-us-item h3, .process-step h3 {
-    font-size: 22px;
-    color: #00d4ff;
-    margin-bottom: 15px;
-}
-
-.why-us-item p, .process-step p {
-    font-size: 16px;
-    color: #ccd6f6;
-}
-
-/* صفحه Contact */
-.contact-details, .thank-you {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.contact-details h2, .thank-you h2 {
-    font-size: 36px;
-    color: #00d4ff;
-    margin-bottom: 40px;
-}
-
-.contact-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.contact-item {
-    width: 280px;
-    padding: 20px;
-    background: rgba(20, 30, 50, 0.9);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
-
-.contact-item h3 {
-    font-size: 22px;
-    color: #00d4ff;
-    margin-bottom: 15px;
-}
-
-.contact-item p {
-    font-size: 16px;
-    color: #ccd6f6;
-}
-
-.thank-you p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #ccd6f6;
-}
-
-/* فوتر */
-.contact-info {
-    padding: 60px 20px;
-    background: rgba(10, 15, 26, 0.9);
-    text-align: center;
-}
-
-.contact-info h2 {
+.vision h2, .services-preview h2, .about-story h2, .values h2, .services-list h2, .contact-info h2 {
     font-size: 36px;
     color: #00d4ff;
     margin-bottom: 30px;
 }
 
-.contact-info .clickable-link {
-    margin-bottom: 15px;
+.vision p, .about-story p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #ccd6f6;
 }
 
-.contact-info .clickable-link a {
-    color: #00d4ff;
-    font-size: 18px;
+/* گرید سرویس‌ها */
+.services-grid, .values-grid, .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item, .value-item, .contact-item {
+    width: 300px;
+    padding: 25px;
+    background: rgba(20, 30, 50, 0.9);
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
-.contact-info .clickable-link a:hover {
+.service-item:hover, .value-item:hover, .contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.service-item h3, .value-item h3, .contact-item h3 {
+    font-size: 22px;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.service-item p, .value-item p, .contact-item p {
+    font-size: 16px;
+    color: #ccd6f6;
+}
+
+.explore-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 30px;
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
+    border: 1px solid #00d4ff;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+    background: #00d4ff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* سرویس‌ها در صفحه Services */
+.services-list .service {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background: rgba(20, 30, 50, 0.9);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.services-list .service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.services-list .service h2 {
+    font-size: 28px;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.services-list .service p {
+    font-size: 16px;
+    color: #ccd6f6;
+}
+
+/* فوتر */
+.footer {
+    padding: 60px 20px;
+    background: rgba(10, 15, 26, 0.9);
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: 36px;
+    color: #00d4ff;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    font-size: 18px;
+    color: #00d4ff;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
     color: #66e6ff;
     text-decoration: underline;
-}
-
-/* انیمیشن‌ها */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
-    50% { box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6); }
-    100% { box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
 }
 
 /* تنظیمات زبان */
@@ -563,41 +282,51 @@ html[lang="ar"] {
     font-family: 'Noto Naskh Arabic', sans-serif;
 }
 
-/* ریسپانسیو موبایل */
+/* منوی موبایل */
 @media (max-width: 768px) {
     .navbar {
-        padding: 15px 20px指標
-
-    .logo {
-        font-size: 22px;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(10, 15, 26, 0.95);
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .nav-links.active {
-        display: flex;
+        padding: 15px 20px;
     }
 
     .menu-toggle {
         display: flex;
     }
 
-    .hero-content h1, .services-hero-content h1, .about-hero-content h1, .contact-hero-content h1 {
-        font-size: 32px;
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 15, 26, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
     }
 
-    .hero-content p, .services-hero-content p, .about-hero-content p, .contact-hero-content p {
+    .nav-links.active {
+        display: flex;
+        max-height: 300px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    #language-switch {
+        padding: 6px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
         font-size: 16px;
     }
 
@@ -606,40 +335,18 @@ html[lang="ar"] {
         font-size: 16px;
     }
 
-    .service-card, .stat-item, .why-us-item, .process-step, .contact-item {
+    .service-item, .value-item, .contact-item {
         width: 100%;
         max-width: 350px;
     }
 
-    .service-category {
+    .services-list .service {
         width: 100%;
-        max-width: 400px;
-    }
-
-    .whatsapp-promo-highlight {
-        padding: 20px;
-    }
-
-    .promo-content h3 {
-        font-size: 24px;
-    }
-
-    .promo-content p {
-        font-size: 16px;
     }
 }
 
-/* ریسپانسیو تبلت */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .service-card, .stat-item, .why-us-item, .process-step, .contact-item {
+    .service-item, .value-item, .contact-item {
         width: 45%;
-    }
-
-    .service-category {
-        width: 48%;
-    }
-
-    .hero-content h1, .services-hero-content h1, .about-hero-content h1, .contact-hero-content h1 {
-        font-size: 40px;
     }
 }
