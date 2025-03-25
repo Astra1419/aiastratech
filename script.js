@@ -1,65 +1,95 @@
+// Menu Toggle Functionality
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+    // Animation for hamburger to X
+    if (menuToggle.classList.contains('open')) {
+        menuToggle.querySelectorAll('span')[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        menuToggle.querySelectorAll('span')[1].style.opacity = '0';
+        menuToggle.querySelectorAll('span')[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+    } else {
+        menuToggle.querySelectorAll('span')[0].style.transform = 'rotate(0) translate(0, 0)';
+        menuToggle.querySelectorAll('span')[1].style.opacity = '1';
+        menuToggle.querySelectorAll('span')[2].style.transform = 'rotate(0) translate(0, 0)';
+    }
+});
+
+// Language Switch Functionality
+const languageSwitch = document.getElementById('language-switch');
+const elements = document.querySelectorAll('[data-en], [data-fa], [data-ar]');
+
+function updateLanguage() {
+    const selectedLang = languageSwitch.value;
+    elements.forEach(element => {
+        const text = element.getAttribute(`data-${selectedLang}`);
+        if (text) {
+            element.textContent = text;
+        }
+    });
+}
+
+languageSwitch.addEventListener('change', updateLanguage);
+
+// Set default language on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('language') || 'en';
-    document.documentElement.lang = savedLang;
-    document.getElementById('language-switch').value = savedLang;
-    updateContent(savedLang);
-    updateDirection(savedLang);
+    updateLanguage();
+});
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    document.getElementById('language-switch').addEventListener('change', (e) => {
-        const lang = e.target.value;
-        localStorage.setItem('language', lang);
-        document.documentElement.lang = lang;
-        updateContent(lang);
-        updateDirection(lang);
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = anchor.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navLinks.classList.remove('active');
-                menuToggle.classList.remove('active');
-            }
-        });
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
-function updateContent(lang) {
-    document.querySelectorAll('[data-en]').forEach(el => {
-        const text = el.getAttribute(`data-${lang}`) || el.getAttribute('data-en');
-        el.textContent = text;
+// Form Submission (Basic Alert for Demo)
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = contactForm.querySelector('input[name="name"]').value;
+        const email = contactForm.querySelector('input[name="email"]').value;
+        const subject = contactForm.querySelector('input[name="subject"]').value;
+        const message = contactForm.querySelector('textarea[name="message"]').value;
+
+        // Simulate form submission
+        alert(`Message Sent!\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`);
+        contactForm.reset();
     });
 }
 
-function updateDirection(lang) {
-    const body = document.body;
-    const navbar = document.querySelector('.navbar');
-    if (lang === 'fa' || lang === 'ar') {
-        body.style.direction = 'rtl';
-        navbar.style.flexDirection = 'row-reverse';
-    } else {
-        body.style.direction = 'ltr';
-        navbar.style.flexDirection = 'row';
-    }
-}
+// Fade-in Animation on Scroll
+const fadeElements = document.querySelectorAll('.service-card, .stat-item, .why-us-item, .process-step, .contact-item');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+fadeElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transition = 'opacity 0.5s ease-in';
+    observer.observe(element);
+});
+
+// Add fade-in class dynamically
+document.addEventListener('DOMContentLoaded', () => {
+    const style = document.createElement('style');
+    style.textContent = `
+        .fade-in {
+            opacity: 1 !important;
+        }
+    `;
+    document.head.appendChild(style);
+});
