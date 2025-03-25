@@ -7,15 +7,15 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0d0d0d;
-    color: #ffffff;
-    line-height: 1.6;
+    background-color: #0a0f1a;
+    color: #e0e6ff;
+    line-height: 1.7;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* نویگیشن بار */
@@ -26,71 +26,75 @@ a {
     width: 100%;
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.8));
-    padding: 20px 40px;
+    justify-content: space-between;
+    background: rgba(10, 15, 26, 0.9);
+    padding: 15px 40px;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #00ccff;
+    font-size: 26px;
+    font-weight: 700;
+    color: #00d4ff;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: color 0.3s;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
 }
 
 .logo:hover {
-    color: #66e0ff;
+    color: #66e6ff;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
+    color: #e0e6ff;
+    font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s, transform 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #00ccff;
-    transform: scale(1.1);
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 #language-switch {
-    background-color: #1a1a1a;
-    color: #fff;
-    border: 1px solid #00ccff;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e6ff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 #language-switch:hover {
-    background-color: #333;
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
 }
 
 .menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     cursor: pointer;
-    padding: 5px;
 }
 
 .menu-toggle span {
     width: 25px;
-    height: 3px;
-    background-color: #fff;
+    height: 2px;
+    background-color: #e0e6ff;
     transition: all 0.3s ease;
 }
 
@@ -103,21 +107,12 @@ a {
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* تنظیمات جهت برای زبان‌ها */
 html[lang="en"] .navbar {
     flex-direction: row;
-}
-
-html[lang="en"] .nav-links {
-    margin-left: 30px;
-    margin-right: 0;
-}
-
-html[lang="en"] #language-switch {
-    margin-left: auto;
-    margin-right: 0;
 }
 
 html[lang="fa"], html[lang="ar"] {
@@ -128,23 +123,13 @@ html[lang="fa"] .navbar, html[lang="ar"] .navbar {
     flex-direction: row-reverse;
 }
 
-html[lang="fa"] .nav-links, html[lang="ar"] .nav-links {
-    margin-right: 30px;
-    margin-left: 0;
-}
-
-html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
-    margin-right: auto;
-    margin-left: 0;
-}
-
-/* کاور پس‌زمینه */
+/* پس‌زمینه اصلی */
 .background-container {
-    background: url('cover-image.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(135deg, #0a0f1a 0%, #1a2333 100%);
     min-height: 100vh;
-    position: relative;
     padding-top: 80px;
+    position: relative;
+    overflow: hidden;
 }
 
 .background-container::before {
@@ -154,7 +139,7 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    background: radial-gradient(circle at center, rgba(0, 212, 255, 0.1), transparent 70%);
     z-index: 1;
 }
 
@@ -163,247 +148,403 @@ html[lang="fa"] #language-switch, html[lang="ar"] #language-switch {
     z-index: 2;
 }
 
-/* هدر سرویس‌ها */
-.services-hero {
-    height: 70vh;
+/* هدر عمومی (Hero) */
+.hero, .services-hero, .about-hero, .contact-hero {
+    min-height: 80vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 20px;
 }
 
-.services-hero-content {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 40px 60px;
-    border-radius: 20px;
-    transition: background 0.3s, transform 0.5s;
-    animation: zoomIn 1.5s ease-in-out;
-}
-
-.services-hero-content:hover {
-    background: rgba(0, 0, 0, 0.6);
-    transform: scale(1.02);
-}
-
-.services-hero-content h1 {
-    font-size: 70px;
-    color: #00ccff;
-    margin-bottom: 20px;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-}
-
-.services-hero-content p {
-    font-size: 26px;
+.hero-content, .services-hero-content, .about-hero-content, .contact-hero-content {
     max-width: 900px;
-    margin: 0 auto;
+    padding: 40px;
+    background: rgba(10, 15, 26, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content h1, .services-hero-content h1, .about-hero-content h1, .contact-hero-content h1 {
+    font-size: 48px;
+    color: #00d4ff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 212, 255, 0.3);
+}
+
+.hero-content p, .services-hero-content p, .about-hero-content p, .contact-hero-content p {
+    font-size: 20px;
+    color: #ccd6f6;
+    margin-bottom: 30px;
 }
 
 .cta-button {
     display: inline-block;
-    margin-top: 30px;
-    padding: 15px 40px;
-    background: linear-gradient(45deg, #00ccff, #0077b3);
+    padding: 14px 35px;
+    background: linear-gradient(45deg, #00d4ff, #007bff);
     color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 600;
     border-radius: 50px;
-    transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 5px 15px rgba(0, 204, 255, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background: linear-gradient(45deg, #0077b3, #00ccff);
-    transform: translateY(-5px);
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
 }
 
-/* بخش جدید: پنل واتس‌اپ */
-.whatsapp-promo-highlight {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    margin: 40px auto -60px auto;
-    padding: 20px;
-    background: linear-gradient(45deg, #00ccff, #1a1a1a);
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 204, 255, 0.5);
-    overflow: hidden;
-    z-index: 3;
-    animation: pulseGlow 2s infinite alternate;
-}
-
-.whatsapp-promo-highlight::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 204, 255, 0.2), transparent);
-    opacity: 0.7;
-    animation: rotateGlow 10s linear infinite;
-}
-
-.promo-content {
-    position: relative;
-    z-index: 2;
+/* بخش چشم‌انداز */
+.vision-section {
+    padding: 80px 20px;
     text-align: center;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 20px;
-    transition: transform 0.3s ease;
 }
 
-.whatsapp-promo-highlight:hover .promo-content {
-    transform: scale(1.02);
+.vision-section h2 {
+    font-size: 36px;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.vision-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ccd6f6;
+}
+
+/* سرویس‌ها در صفحه اصلی */
+.services {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    color: #00d4ff;
+    margin-bottom: 40px;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-card {
+    width: 280px;
+    background: rgba(20, 30, 50, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.service-card h3 {
+    font-size: 22px;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #ccd6f6;
+}
+
+/* آمار در صفحه اصلی */
+.stats-section {
+    padding: 80px 20px;
+    background: rgba(20, 30, 50, 0.9);
+    text-align: center;
+}
+
+.stats-section h2 {
+    font-size: 36px;
+    color: #00d4ff;
+    margin-bottom: 40px;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.stat-item {
+    width: 300px;
+    padding: 20px;
+}
+
+.stat-item h3 {
+    font-size: 24px;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.stat-item p {
+    font-size: 16px;
+    color: #ccd6f6;
+}
+
+/* پنل واتس‌اپ */
+.whatsapp-promo-highlight {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #00d4ff, #1a2333);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+    text-align: center;
+    animation: pulse 2s infinite;
 }
 
 .promo-content h3 {
-    font-size: 32px;
+    font-size: 28px;
     color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 6px rgba(0, 204, 255, 0.8);
 }
 
 .promo-content p {
-    font-size: 20px;
-    color: #e6e6e6;
-    line-height: 1.6;
+    font-size: 18px;
+    color: #e0e6ff;
+    margin-bottom: 20px;
 }
 
 .promo-content a {
-    color: #00ffcc;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px solid #00ffcc;
-    padding-bottom: 2px;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: #007bff;
+    border-radius: 25px;
     transition: all 0.3s ease;
 }
 
 .promo-content a:hover {
-    color: #66ffe6;
-    border-bottom-color: #66ffe6;
-    text-shadow: 0 0 5px rgba(102, 255, 230, 0.7);
+    background: #00d4ff;
+    transform: scale(1.05);
 }
 
-/* سرویس‌ها */
+/* سرویس‌ها در صفحه Services */
 .services-section {
-    padding: 120px 20px;
-    background: rgba(26, 26, 26, 0.9);
+    padding: 80px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .service-category {
-    width: 400px;
-    background: linear-gradient(135deg, rgba(13, 13, 13, 0.9), rgba(0, 0, 0, 0.7));
-    padding: 40px;
-    border-radius: 20px;
+    width: 450px;
+    background: rgba(20, 30, 50, 0.9);
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    transition: transform 0.4s, box-shadow 0.4s;
-    animation: slideUp 1s ease-out;
-    border: 1px solid rgba(0, 204, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .service-category:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 204, 255, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
 }
 
 .service-category h2 {
-    font-size: 36px;
-    color: #00ccff;
+    font-size: 28px;
+    color: #00d4ff;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .service-category p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #ccc;
+    font-size: 16px;
+    color: #ccd6f6;
+    margin-bottom: 20px;
 }
 
 .service-image {
     height: 200px;
-    margin-top: 20px;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 .service-image:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+/* صفحه About */
+.mission-values, .why-us, .process-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.mission-values h2, .why-us h2, .process-section h2 {
+    font-size: 36px;
+    color: #00d4ff;
+    margin-bottom: 40px;
+}
+
+.mission, .values {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.mission h3, .values h3 {
+    font-size: 24px;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.values ul {
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.values li {
+    font-size: 16px;
+    color: #ccd6f6;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.values li:before {
+    content: "•";
+    color: #00d4ff;
+    position: absolute;
+    left: 0;
+}
+
+.why-us-list, .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.why-us-item, .process-step {
+    width: 300px;
+    padding: 20px;
+    background: rgba(20, 30, 50, 0.9);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.why-us-item:hover, .process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.why-us-item h3, .process-step h3 {
+    font-size: 22px;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.why-us-item p, .process-step p {
+    font-size: 16px;
+    color: #ccd6f6;
+}
+
+/* صفحه Contact */
+.contact-details, .thank-you {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-details h2, .thank-you h2 {
+    font-size: 36px;
+    color: #00d4ff;
+    margin-bottom: 40px;
+}
+
+.contact-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-item {
+    width: 280px;
+    padding: 20px;
+    background: rgba(20, 30, 50, 0.9);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.contact-item h3 {
+    font-size: 22px;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    font-size: 16px;
+    color: #ccd6f6;
+}
+
+.thank-you p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ccd6f6;
 }
 
 /* فوتر */
 .contact-info {
+    padding: 60px 20px;
+    background: rgba(10, 15, 26, 0.9);
     text-align: center;
-    padding: 80px 20px;
-    background: rgba(26, 26, 26, 0.9);
 }
 
 .contact-info h2 {
-    font-size: 48px;
-    color: #00ccff;
+    font-size: 36px;
+    color: #00d4ff;
     margin-bottom: 30px;
-    text-transform: uppercase;
 }
 
 .contact-info .clickable-link {
-    font-size: 18px;
     margin-bottom: 15px;
-    display: block;
 }
 
 .contact-info .clickable-link a {
-    color: #00ccff !important;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: inline-block;
-    width: 100%;
+    color: #00d4ff;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
 .contact-info .clickable-link a:hover {
-    color: #00aaff !important;
+    color: #66e6ff;
     text-decoration: underline;
 }
 
 /* انیمیشن‌ها */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInText {
+@keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes pulseGlow {
-    0% { box-shadow: 0 10px 30px rgba(0, 204, 255, 0.5); }
-    100% { box-shadow: 0 15px 40px rgba(0, 204, 255, 0.8); }
-}
-
-@keyframes rotateGlow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes pulse {
+    0% { box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
+    50% { box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6); }
+    100% { box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); }
 }
 
 /* تنظیمات زبان */
@@ -422,12 +563,10 @@ html[lang="ar"] {
     font-family: 'Noto Naskh Arabic', sans-serif;
 }
 
-/* تنظیمات ریسپانسیو برای موبایل */
+/* ریسپانسیو موبایل */
 @media (max-width: 768px) {
     .navbar {
-        padding: 15px 20px;
-        justify-content: space-between;
-    }
+        padding: 15px 20px指標
 
     .logo {
         font-size: 22px;
@@ -436,69 +575,48 @@ html[lang="ar"] {
     .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         width: 100%;
-        background: rgba(26, 26, 26, 0.95);
+        background: rgba(10, 15, 26, 0.95);
         flex-direction: column;
-        padding: 20px 0;
+        padding: 20px;
         gap: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
 
     .nav-links.active {
         display: flex;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .nav-links a {
-        font-size: 16px;
-        text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(0, 204, 255, 0.2);
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-
-    #language-switch {
-        padding: 6px;
-        font-size: 14px;
-        margin: 0;
     }
 
     .menu-toggle {
         display: flex;
     }
 
-    .services-hero-content {
-        padding: 20px 30px;
+    .hero-content h1, .services-hero-content h1, .about-hero-content h1, .contact-hero-content h1 {
+        font-size: 32px;
     }
 
-    .services-hero-content h1 {
-        font-size: 40px;
-    }
-
-    .services-hero-content p {
-        font-size: 18px;
-    }
-
-    .cta-button {
-        padding: 10px 30px;
+    .hero-content p, .services-hero-content p, .about-hero-content p, .contact-hero-content p {
         font-size: 16px;
     }
 
-    .whatsapp-promo-highlight {
-        margin: 20px auto -40px auto;
-        padding: 15px;
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 16px;
     }
 
-    .promo-content {
+    .service-card, .stat-item, .why-us-item, .process-step, .contact-item {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .service-category {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .whatsapp-promo-highlight {
         padding: 20px;
     }
 
@@ -509,48 +627,19 @@ html[lang="ar"] {
     .promo-content p {
         font-size: 16px;
     }
-
-    .services-section {
-        padding: 60px 10px;
-    }
-
-    .service-category {
-        width: 90%;
-        max-width: 400px;
-    }
 }
 
-/* تنظیمات ریسپانسیو برای تبلت */
+/* ریسپانسیو تبلت */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .navbar {
-        padding: 15px 30px;
-    }
-
-    .nav-links {
-        gap: 20px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-    }
-
-    .services-hero-content h1 {
-        font-size: 50px;
-    }
-
-    .services-hero-content p {
-        font-size: 20px;
-    }
-
-    .promo-content h3 {
-        font-size: 28px;
-    }
-
-    .promo-content p {
-        font-size: 18px;
+    .service-card, .stat-item, .why-us-item, .process-step, .contact-item {
+        width: 45%;
     }
 
     .service-category {
-        width: 45%;
+        width: 48%;
+    }
+
+    .hero-content h1, .services-hero-content h1, .about-hero-content h1, .contact-hero-content h1 {
+        font-size: 40px;
     }
 }
