@@ -1,4 +1,3 @@
-/* تنظیمات کلی */
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +5,12 @@
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     background: #0a0f1a;
     color: #e0e6ff;
-    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-a {
-    color: #00d4ff;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* نویگیشن بار */
 .navbar {
     position: fixed;
     top: 0;
@@ -27,40 +19,35 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
-    background: rgba(10, 15, 26, 0.95);
-    backdrop-filter: blur(8px);
+    background: rgba(10, 15, 26, 0.9);
+    backdrop-filter: blur(10px);
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     color: #00d4ff;
-    letter-spacing: 1px;
-}
-
-.logo:hover {
-    color: #66e6ff;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
+    color: #e0e6ff;
     font-size: 16px;
-    font-weight: 500;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 8px 12px;
     transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    background: rgba(0, 212, 255, 0.2);
-    color: #fff;
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 5px;
 }
 
 #language-switch {
@@ -80,198 +67,99 @@ a {
 .menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .menu-toggle span {
     width: 30px;
     height: 3px;
     background: #e0e6ff;
+    border-radius: 3px;
     transition: all 0.3s ease;
-    border-radius: 2px;
 }
 
-/* هدر */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 80px 20px 20px;
-    background: linear-gradient(135deg, rgba(10, 15, 26, 0.9), rgba(0, 212, 255, 0.1));
+    background: linear-gradient(135deg, #0a0f1a, #1a2333);
 }
 
-.hero-content {
-    max-width: 800px;
-    padding: 40px;
-    background: rgba(20, 30, 50, 0.8);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content h1 {
+.hero h1 {
     font-size: 48px;
     color: #00d4ff;
     margin-bottom: 20px;
 }
 
-.hero-content p {
+.hero p {
     font-size: 20px;
     color: #ccd6f6;
     margin-bottom: 30px;
 }
 
 .cta-button {
-    display: inline-block;
     padding: 15px 35px;
-    background: linear-gradient(45deg, #00d4ff, #007bff);
+    background: #00d4ff;
     color: #fff;
     font-weight: 600;
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
     transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background: linear-gradient(45deg, #007bff, #00d4ff);
+    background: #007bff;
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
 }
 
-/* بخش‌های اصلی */
-.vision, .services-preview, .about-story, .values, .services-list, .contact-info {
+.content {
     padding: 80px 20px;
     text-align: center;
 }
 
-.vision h2, .services-preview h2, .about-story h2, .values h2, .services-list h2, .contact-info h2 {
+.content h2 {
     font-size: 36px;
-    color: #00d4ff;
-    margin-bottom: 30px;
-}
-
-.vision p, .about-story p {
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto;
-    color: #ccd6f6;
-}
-
-/* گرید سرویس‌ها */
-.services-grid, .values-grid, .contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service-item, .value-item, .contact-item {
-    width: 300px;
-    padding: 25px;
-    background: rgba(20, 30, 50, 0.9);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-}
-
-.service-item:hover, .value-item:hover, .contact-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
-
-.service-item h3, .value-item h3, .contact-item h3 {
-    font-size: 22px;
-    color: #00d4ff;
-    margin-bottom: 15px;
-}
-
-.service-item p, .value-item p, .contact-item p {
-    font-size: 16px;
-    color: #ccd6f6;
-}
-
-.explore-button {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 12px 30px;
-    background: rgba(0, 212, 255, 0.2);
-    color: #00d4ff;
-    border: 1px solid #00d4ff;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.explore-button:hover {
-    background: #00d4ff;
-    color: #fff;
-    transform: scale(1.05);
-}
-
-/* سرویس‌ها در صفحه Services */
-.services-list .service {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    padding: 30px;
-    background: rgba(20, 30, 50, 0.9);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-}
-
-.services-list .service:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-}
-
-.services-list .service h2 {
-    font-size: 28px;
     color: #00d4ff;
     margin-bottom: 20px;
 }
 
-.services-list .service p {
-    font-size: 16px;
+.content p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
     color: #ccd6f6;
 }
 
-/* فوتر */
 .footer {
-    padding: 60px 20px;
+    padding: 40px 20px;
     background: rgba(10, 15, 26, 0.9);
     text-align: center;
 }
 
-.footer h2 {
-    font-size: 36px;
-    color: #00d4ff;
-    margin-bottom: 30px;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.footer-links a {
-    font-size: 18px;
-    color: #00d4ff;
-    transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #66e6ff;
-    text-decoration: underline;
+.footer p {
+    font-size: 16px;
+    color: #ccd6f6;
 }
 
 /* تنظیمات زبان */
-html[lang="en"] {
-    direction: ltr;
-    font-family: 'Roboto', sans-serif;
-}
-
 html[lang="fa"] {
     direction: rtl;
     font-family: 'Vazir', sans-serif;
@@ -282,7 +170,12 @@ html[lang="ar"] {
     font-family: 'Noto Naskh Arabic', sans-serif;
 }
 
-/* منوی موبایل */
+html[lang="en"] {
+    direction: ltr;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ریسپانسیو */
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 20px;
@@ -302,51 +195,26 @@ html[lang="ar"] {
         flex-direction: column;
         padding: 20px 0;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
     }
 
     .nav-links.active {
         display: flex;
-        max-height: 300px;
     }
 
     .nav-links a {
         font-size: 18px;
         padding: 15px;
-        text-align: center;
     }
 
-    #language-switch {
-        padding: 6px;
-    }
-
-    .hero-content h1 {
+    .hero h1 {
         font-size: 36px;
     }
 
-    .hero-content p {
+    .hero p {
         font-size: 16px;
     }
 
     .cta-button {
         padding: 12px 25px;
-        font-size: 16px;
-    }
-
-    .service-item, .value-item, .contact-item {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .services-list .service {
-        width: 100%;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .service-item, .value-item, .contact-item {
-        width: 45%;
     }
 }
